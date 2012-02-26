@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<div id="demo"></div>
+<ul id="separate-list"></ul>
+
+    <script>        
+        function createUploader(){            
+            var uploader = new qq.FileUploader({
+                element: document.getElementById('demo'),
+                listElement: document.getElementById('separate-list'),
+                action: 'up'
+                ,
+          params: {
+            authenticity_token: '#{ form_authenticity_token }'
+          }
+            });           
+        }        
+        window.onload = createUploader;     
+    </script> 
+
+<%= link_to "index", photos_path %> 
+
+
+
